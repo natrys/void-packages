@@ -1,0 +1,27 @@
+# Template file for 'xnotify'
+pkgname=xnotify
+version=0.5.0
+revision=1
+build_style=gnu-makefile
+makedepends="freetype-devel imlib2-devel libXft-devel libXinerama-devel"
+short_desc="Popup a notification on the screen"
+maintainer="Imran Khan <imrankhan@teknik.io>"
+license="MIT"
+homepage="https://github.com/phillbush/xnotify"
+distfiles="https://github.com/phillbush/xnotify/archive/v${version}.tar.gz"
+checksum=307f7f87a215f01da38b953c57be11ed42909afca541d159163b010cbdae45a2
+
+CFLAGS="-I${XBPS_CROSS_BASE}/usr/include"
+CFLAGS+=" -I${XBPS_CROSS_BASE}/usr/include/X11"
+CFLAGS+=" -I${XBPS_CROSS_BASE}/usr/include/freetype2"
+LDFLAGS="-lfontconfig -lXft -lXinerama -lX11 -lImlib2"
+
+pre_build() {
+	if [ -e ${FILESDIR}/config.h ]; then
+		cp ${FILESDIR}/config.h config.h
+	fi
+}
+
+post_install() {
+	vlicense LICENSE
+}
