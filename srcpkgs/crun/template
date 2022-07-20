@@ -1,6 +1,6 @@
 # Template file for 'crun'
 pkgname=crun
-version=1.4.5
+version=1.5
 revision=1
 build_style=gnu-configure
 configure_args="--disable-systemd"
@@ -11,7 +11,7 @@ maintainer="Imran Khan <imrankhan@teknik.io>"
 license="GPL-2.0-or-later, LGPL-2.1-or-later"
 homepage="https://github.com/containers/crun"
 distfiles="https://github.com/containers/crun/releases/download/${version}/crun-${version}.tar.gz"
-checksum=923ea3557691990c972b3ed587a2f9703a03a0f83e0ea52d584ec668a59908e5
+checksum=acd24012daa951cf1674b20b2d5f87975d5d6c8e8c80bfe12e4cffa3495cae67
 
 if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
 	makedepends+=" argp-standalone"
