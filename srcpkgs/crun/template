@@ -1,6 +1,6 @@
 # Template file for 'crun'
 pkgname=crun
-version=1.18.1
+version=1.19
 revision=1
 build_style=gnu-configure
 configure_args="--disable-systemd"
@@ -12,7 +12,7 @@ license="GPL-2.0-or-later AND LGPL-2.1-or-later"
 homepage="https://github.com/containers/crun"
 changelog="https://raw.githubusercontent.com/containers/crun/main/NEWS"
 distfiles="https://github.com/containers/crun/releases/download/${version}/crun-${version}.tar.gz"
-checksum=390cbbb022457aa705c802ad7ba9a5aace8562192d57365ce8bed0325770c6bc
+checksum=f37ae4936832a4bde31d50028307e83bcc7af80f2d36779f4ac7c79cdfe682b0
 # most of the tests don't work inside a container
 make_check=no
 
